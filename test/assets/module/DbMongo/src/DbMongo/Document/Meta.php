@@ -6,6 +6,7 @@ use DateTime;
 
 class Meta
 {
+    /** @var string */
     protected $id;
 
     public function getId()
@@ -13,6 +14,7 @@ class Meta
         return $this->id;
     }
 
+    /** @var string */
     protected $name;
 
     public function getName()
@@ -30,6 +32,7 @@ class Meta
         return $this;
     }
 
+    /** @var DateTime */
     protected $createdAt;
 
     public function getCreatedAt()
@@ -55,9 +58,7 @@ class Meta
     }
 
     /**
-     * @return array
-     *
-     * @psalm-return array{name: mixed, createdAt: mixed, description: mixed}
+     * @return array{name: string, createdAt: DateTime, description: string}
      */
     public function getArrayCopy(): array
     {

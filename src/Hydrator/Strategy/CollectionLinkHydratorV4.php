@@ -8,24 +8,30 @@
 
 namespace Laminas\ApiTools\Doctrine\QueryBuilder\Hydrator\Strategy;
 
-use Doctrine\Laminas\Hydrator\Strategy\AbstractCollectionStrategy;
+use Doctrine\Laminas\Hydrator\Strategy\CollectionStrategyInterface;
+use Doctrine\Persistence\Mapping\ClassMetadata;
 use Laminas\ApiTools\Hal\Link\Link;
 use Laminas\Filter\FilterChain;
 use Laminas\Hydrator\Strategy\StrategyInterface;
 use Laminas\ServiceManager\ServiceManager;
+use LogicException;
 
 use function method_exists;
 
 /**
  * A field-specific hydrator for collections.
  *
- * This version is for use with laminas-hyrator v3 and up, and will be aliased to
+ * This version is for use with laminas-hyrator v3 and up, and doctrine-hydrator 3 and will be aliased to
  * CollectionLink in those versions.
  */
-class CollectionLinkHydratorV3 extends AbstractCollectionStrategy implements StrategyInterface
+class CollectionLinkHydratorV4 implements StrategyInterface, CollectionStrategyInterface
 {
-    /** @var ServiceManager */
-    protected $serviceManager;
+    protected ServiceManager $serviceManager;
+    private ?string $collectionName = null;
+
+    private ?ClassMetadata $metadata = null;
+
+    private ?object $object = null;
 
     /**
      * @return self
@@ -45,6 +51,48 @@ class CollectionLinkHydratorV3 extends AbstractCollectionStrategy implements Str
         return $this->serviceManager;
     }
 
+    public function setCollectionName(string $collectionName): void
+    {
+        $this->collectionName = $collectionName;
+    }
+
+    public function getCollectionName(): string
+    {
+        if ($this->collectionName === null) {
+            throw new LogicException('Collection name has not been set.');
+        }
+
+        return $this->collectionName;
+    }
+
+    public function setClassMetadata(ClassMetadata $classMetadata): void
+    {
+        $this->metadata = $classMetadata;
+    }
+
+    public function getClassMetadata(): ClassMetadata
+    {
+        if ($this->metadata === null) {
+            throw new LogicException('Class metadata has not been set.');
+        }
+
+        return $this->metadata;
+    }
+
+    public function setObject(object $object): void
+    {
+        $this->object = $object;
+    }
+
+    public function getObject(): object
+    {
+        if ($this->object === null) {
+            throw new LogicException('Object has not been set.');
+        }
+
+        return $this->object;
+    }
+
     /**
      * @inheritDoc
      */
@@ -55,7 +103,7 @@ class CollectionLinkHydratorV3 extends AbstractCollectionStrategy implements Str
             ! method_exists($value, 'getTypeClass')
             || ! isset($config['api-tools-hal']['metadata_map'][$value->getTypeClass()->name])
         ) {
-            return;
+            return null;
         }
 
         $config  = $config['api-tools-hal']['metadata_map'][$value->getTypeClass()->name];

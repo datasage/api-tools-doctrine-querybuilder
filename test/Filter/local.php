@@ -6,7 +6,7 @@
  * @license   https://github.com/laminas-api-tools/api-tools-doctrine-querybuilder/blob/master/LICENSE.md New BSD License
  */
 
-use Doctrine\DBAL\Driver\PDOSqlite\Driver;
+use Doctrine\DBAL\Driver\PDO\SQLite\Driver;
 use Laminas\ApiTools\Doctrine\QueryBuilder\Filter;
 use Laminas\ServiceManager\Factory\InvokableFactory;
 

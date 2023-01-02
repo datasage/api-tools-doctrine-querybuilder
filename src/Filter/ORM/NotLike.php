@@ -8,10 +8,15 @@
 
 namespace Laminas\ApiTools\Doctrine\QueryBuilder\Filter\ORM;
 
+use Doctrine\ORM\QueryBuilder;
+
 class NotLike extends AbstractFilter
 {
     /**
      * {@inheritDoc}
+     *
+     * @param QueryBuilder $queryBuilder
+     * @param array{where?: string|null, alias?: string|null, field: string, value: scalar} $option
      */
     public function filter($queryBuilder, $metadata, $option)
     {

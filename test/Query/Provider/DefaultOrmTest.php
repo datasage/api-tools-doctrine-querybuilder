@@ -24,22 +24,23 @@ use Laminas\Stdlib\Parameters;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 use Prophecy\PhpUnit\ProphecyTrait;
+use Prophecy\Prophecy\ObjectProphecy;
 use Prophecy\Prophecy\ProphecyInterface;
 
 class DefaultOrmTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @var DefaultOrm|ProphecyInterface */
+    /** @var DefaultOrm */
     protected $provider;
 
-    /** @var QueryBuilder|ProphecyInterface */
+    /** @var ObjectProphecy<QueryBuilder> */
     protected $queryBuilder;
 
-    /** @var ObjectManager|ProphecyInterface */
+    /** @var ObjectProphecy<ObjectManager> */
     protected $objectManager;
 
-    /** @var ServiceLocatorInterface|ProphecyInterface */
+    /** @var ObjectProphecy<ServiceLocatorInterface> */
     protected $serviceLocator;
 
     public function setUp(): void

@@ -30,6 +30,9 @@ abstract class AbstractFilter implements FilterInterface
     /** @var TypeCastInterface */
     protected $typeCaster;
 
+    /**
+     * @param array{type_caster?:TypeCaster|null} $params
+     */
     public function __construct(array $params = [])
     {
         $this->setFilterManager($this->extractFilterManagerFromConstructorParams($params));

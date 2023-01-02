@@ -10,8 +10,9 @@ namespace LaminasTest\ApiTools\Doctrine\QueryBuilder\Filter;
 
 use DateTime;
 use DbMongo\Document;
+use Doctrine\ODM\MongoDB\Query\Builder;
 use LaminasTest\ApiTools\Doctrine\QueryBuilder\TestCase;
-use MongoClient;
+use MongoDB\Client;
 
 use function count;
 
@@ -22,14 +23,15 @@ class ODMFilterTest extends TestCase
         $serviceManager = $this->getApplication()->getServiceManager();
         $filterManager  = $serviceManager->get('LaminasDoctrineQueryBuilderFilterManagerOdm');
         $objectManager  = $serviceManager->get('doctrine.documentmanager.odm_default');
-        $queryBuilder   = $objectManager->createQueryBuilder($entity);
+        /** @var Builder $queryBuilder */
+        $queryBuilder = $objectManager->createQueryBuilder($entity);
         // NOTE:  the metadata is an array with one element in testing :\
 
         $metadata = $objectManager->getMetadataFactory()->getAllMetadata();
 
         $filterManager->filter($queryBuilder, $metadata[0], $filters);
 
-        $result = $queryBuilder->getQuery()->execute();
+        $result = $queryBuilder->getQuery()->execute()->toArray();
         return count($result);
     }
 
@@ -43,10 +45,10 @@ class ODMFilterTest extends TestCase
         $config = $this->getApplication()->getConfig();
         $config = $config['doctrine']['connection']['odm_default'];
 
-        $connection = new MongoClient('mongodb://' . $config['server'] . ':' . $config['port']);
+        $connection = new Client('mongodb://' . $config['server'] . ':' . $config['port']);
         $db         = $connection->{$config['dbname']};
         $collection = $db->meta;
-        $collection->remove();
+        $collection->drop();
 
         $serviceManager = $this->getApplication()->getServiceManager();
         $objectManager  = $serviceManager->get('doctrine.documentmanager.odm_default');
@@ -683,7 +685,7 @@ class ODMFilterTest extends TestCase
             [
                 'field' => 'name',
                 'type'  => 'regex',
-                'value' => '/.*T.*$/',
+                'value' => '.*T.*$',
             ],
         ];
 
@@ -694,7 +696,7 @@ class ODMFilterTest extends TestCase
                 'field' => 'name',
                 'where' => 'or',
                 'type'  => 'regex',
-                'value' => '/.*T.*$/',
+                'value' => '.*T.*$',
             ],
         ];
 
@@ -705,7 +707,7 @@ class ODMFilterTest extends TestCase
                 'field' => 'name',
                 'where' => 'and',
                 'type'  => 'regex',
-                'value' => '/.*T.*$/',
+                'value' => '.*T.*$',
             ],
         ];
 

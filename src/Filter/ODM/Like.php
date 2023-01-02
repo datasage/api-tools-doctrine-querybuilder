@@ -8,7 +8,7 @@
 
 namespace Laminas\ApiTools\Doctrine\QueryBuilder\Filter\ODM;
 
-use MongoRegex;
+use MongoDB\BSON\Regex;
 
 use function str_replace;
 
@@ -28,13 +28,13 @@ class Like extends AbstractFilter
             }
         }
 
-        $regex = '/' . str_replace('%', '.*?', $option['value']) . '/i';
+        $regex = str_replace('%', '.*?', $option['value']);
 
         $queryBuilder->$queryType(
             $queryBuilder
               ->expr()
               ->field($option['field'])
-              ->equals(new MongoRegex($regex))
+              ->equals(new Regex($regex, 'i'))
         );
     }
 }

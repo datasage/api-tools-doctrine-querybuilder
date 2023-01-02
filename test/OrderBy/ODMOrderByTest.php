@@ -10,8 +10,10 @@ namespace LaminasTest\ApiTools\Doctrine\QueryBuilder\OrderBy;
 
 use DateTime;
 use DbMongo\Document;
+use Doctrine\ODM\MongoDB\DocumentManager;
+use Laminas\ApiTools\Doctrine\QueryBuilder\OrderBy\Service\ODMOrderByManager;
 use LaminasTest\ApiTools\Doctrine\QueryBuilder\TestCase;
-use MongoClient;
+use MongoDB\Client;
 
 class ODMOrderByTest extends TestCase
 {
@@ -21,7 +23,9 @@ class ODMOrderByTest extends TestCase
     private function fetchResult(iterable $orderBy, string $entity = 'DbMongo\Document\Meta')
     {
         $serviceManager = $this->getApplication()->getServiceManager();
+        /** @var ODMOrderByManager $orderByManager */
         $orderByManager = $serviceManager->get('LaminasDoctrineQueryBuilderOrderByManagerOdm');
+        /** @var DocumentManager $objectManager */
         $objectManager  = $serviceManager->get('doctrine.documentmanager.odm_default');
         $queryBuilder   = $objectManager->createQueryBuilder($entity);
         // NOTE:  the metadata is an array with one element in testing :\
@@ -40,13 +44,15 @@ class ODMOrderByTest extends TestCase
         );
         parent::setUp();
 
+        /** @var array $config */
         $config = $this->getApplication()->getConfig();
+        /** @var array $config */
         $config = $config['doctrine']['connection']['odm_default'];
 
-        $connection = new MongoClient('mongodb://' . $config['server'] . ':' . $config['port']);
+        $connection = new Client('mongodb://' . $config['server'] . ':' . $config['port']);
         $db         = $connection->{$config['dbname']};
         $collection = $db->meta;
-        $collection->remove();
+        $collection->drop();
 
         $serviceManager = $this->getApplication()->getServiceManager();
         $objectManager  = $serviceManager->get('doctrine.documentmanager.odm_default');

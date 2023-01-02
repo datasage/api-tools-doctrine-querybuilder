@@ -8,7 +8,6 @@
 
 namespace LaminasTest\ApiTools\Doctrine\QueryBuilder\Query\Provider;
 
-use Doctrine\MongoDB\Cursor;
 use Doctrine\ODM\MongoDB\DocumentManager as ObjectManager;
 use Doctrine\ODM\MongoDB\Mapping\ClassMetadata;
 use Doctrine\ODM\MongoDB\Mapping\ClassMetadataFactory;
@@ -23,28 +22,31 @@ use Laminas\Http\Request;
 use Laminas\ServiceManager\ServiceLocatorInterface;
 use Laminas\Stdlib\Parameters;
 use PHPUnit\Framework\TestCase;
+use Prophecy\Argument;
 use Prophecy\PhpUnit\ProphecyTrait;
+use Prophecy\Prophecy\ObjectProphecy;
 use Prophecy\Prophecy\ProphecyInterface;
 
 class DefaultOdmTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @var DefaultOdm|ProphecyInterface */
+    /** @var DefaultOdm */
     protected $provider;
 
-    /** @var QueryBuilder|ProphecyInterface */
+    /** @var ObjectProphecy<QueryBuilder> */
     protected $queryBuilder;
 
-    /** @var ObjectManager|ProphecyInterface */
+    /** @var ObjectProphecy<ObjectManager> */
     protected $objectManager;
 
-    /** @var ServiceLocatorInterface|ProphecyInterface */
+    /** @var ObjectProphecy<ServiceLocatorInterface> */
     protected $serviceLocator;
 
     public function setUp(): void
     {
         $this->queryBuilder = $this->prophesize(QueryBuilder::class);
+        $this->queryBuilder->find(Argument::any())->willReturn($this->queryBuilder->reveal());
 
         $this->objectManager = $this->prophesize(ObjectManager::class);
         $this->objectManager->createQueryBuilder()->willReturn($this->queryBuilder->reveal());
@@ -217,13 +219,11 @@ class DefaultOdmTest extends TestCase
     {
         $entityClass = 'foo.entity.class';
 
-        $cursor = $this->prophesize(Cursor::class);
-        $cursor->count()->willReturn('foo-count');
-
         $query = $this->prophesize(Query::class);
-        $query->execute()->willReturn($cursor->reveal());
+        $query->execute()->willReturn('foo-count');
 
         $this->queryBuilder->find($entityClass)->shouldBeCalledTimes(1);
+        $this->queryBuilder->count()->willReturn($this->queryBuilder);
         $this->queryBuilder->getQuery()->willReturn($query->reveal());
 
         $count = $this->provider->getCollectionTotal($entityClass);

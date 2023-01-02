@@ -8,8 +8,6 @@
 
 namespace Laminas\ApiTools\Doctrine\QueryBuilder\Filter\ODM;
 
-use MongoRegex;
-
 class Regex extends AbstractFilter
 {
     /**
@@ -30,7 +28,7 @@ class Regex extends AbstractFilter
             $queryBuilder
                 ->expr()
                 ->field($option['field'])
-                ->equals(new MongoRegex($option['value']))
+                ->equals(new \MongoDB\BSON\Regex($option['value']))
         );
     }
 }

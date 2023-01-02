@@ -51,6 +51,7 @@ class DefaultOdm extends AbstractQueryProvider implements QueryProviderInterface
     {
         $request = $event->getRequest()->getQuery()->toArray();
 
+        /** @var Builder $queryBuilder */
         $queryBuilder = $this->getObjectManager()->createQueryBuilder();
         $queryBuilder->find($entityClass);
 
@@ -90,9 +91,11 @@ class DefaultOdm extends AbstractQueryProvider implements QueryProviderInterface
      */
     public function getCollectionTotal($entityClass)
     {
+        /** @var Builder $queryBuilder */
         $queryBuilder = $this->getObjectManager()->createQueryBuilder();
         $queryBuilder->find($entityClass);
-        return $queryBuilder->getQuery()->execute()->count();
+        $queryBuilder->count();
+        return $queryBuilder->getQuery()->execute();
     }
 
     /**
