@@ -11,10 +11,10 @@
     </PossiblyInvalidArgument>
   </file>
   <file src="src/Filter/ODM/TypeCaster.php">
-    <InvalidScalarArgument>
+    <PossiblyInvalidArgument>
       <code>$value</code>
       <code>$value</code>
-    </InvalidScalarArgument>
+    </PossiblyInvalidArgument>
   </file>
   <file src="src/Filter/ORM/AbstractFilter.php">
     <MoreSpecificImplementedParamType>
@@ -42,17 +42,17 @@
     </MoreSpecificImplementedParamType>
   </file>
   <file src="src/Filter/ORM/TypeCaster.php">
-    <InvalidScalarArgument>
-      <code>$value</code>
-      <code>$value</code>
-      <code>$value</code>
-      <code>$value</code>
-      <code>$value</code>
-      <code>$value</code>
-    </InvalidScalarArgument>
     <PossiblyFalseReference>
       <code>format</code>
     </PossiblyFalseReference>
+    <PossiblyInvalidArgument>
+      <code>$value</code>
+      <code>$value</code>
+      <code>$value</code>
+      <code>$value</code>
+      <code>$value</code>
+      <code>$value</code>
+    </PossiblyInvalidArgument>
   </file>
   <file src="src/Filter/Service/ODMFilterManager.php">
     <DeprecatedMethod>
