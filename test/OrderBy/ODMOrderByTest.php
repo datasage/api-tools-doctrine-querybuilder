@@ -26,8 +26,8 @@ class ODMOrderByTest extends TestCase
         /** @var ODMOrderByManager $orderByManager */
         $orderByManager = $serviceManager->get('LaminasDoctrineQueryBuilderOrderByManagerOdm');
         /** @var DocumentManager $objectManager */
-        $objectManager  = $serviceManager->get('doctrine.documentmanager.odm_default');
-        $queryBuilder   = $objectManager->createQueryBuilder($entity);
+        $objectManager = $serviceManager->get('doctrine.documentmanager.odm_default');
+        $queryBuilder  = $objectManager->createQueryBuilder($entity);
         // NOTE:  the metadata is an array with one element in testing :\
 
         $metadata = $objectManager->getMetadataFactory()->getAllMetadata();

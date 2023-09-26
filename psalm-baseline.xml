@@ -1,406 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.30.0@d0bc6e25d89f649e4f36a534f330f8bb4643dd69">
+<files psalm-version="5.13.1@086b94371304750d1c673315321a55d15fc59015">
   <file src="src/Filter/ODM/AbstractFilter.php">
-    <MixedArgument occurrences="1">
-      <code>$params['type_caster'] ?? new TypeCaster()</code>
-    </MixedArgument>
-    <MoreSpecificImplementedParamType occurrences="1">
+    <MoreSpecificImplementedParamType>
       <code>$queryBuilder</code>
     </MoreSpecificImplementedParamType>
-  </file>
-  <file src="src/Filter/ODM/Between.php">
-    <MixedArgument occurrences="6">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['field']</code>
-      <code>$option['field']</code>
-      <code>$option['from']</code>
-      <code>$option['to']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="3">
-      <code>$format</code>
-      <code>$from</code>
-      <code>$to</code>
-    </MixedAssignment>
-  </file>
-  <file src="src/Filter/ODM/Equals.php">
-    <MixedArgument occurrences="4">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="2">
-      <code>$format</code>
-      <code>$value</code>
-    </MixedAssignment>
-  </file>
-  <file src="src/Filter/ODM/GreaterThan.php">
-    <MixedArgument occurrences="4">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="2">
-      <code>$format</code>
-      <code>$value</code>
-    </MixedAssignment>
-  </file>
-  <file src="src/Filter/ODM/GreaterThanOrEquals.php">
-    <MixedArgument occurrences="4">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="2">
-      <code>$format</code>
-      <code>$value</code>
-    </MixedAssignment>
-  </file>
-  <file src="src/Filter/ODM/In.php">
-    <MixedArgument occurrences="4">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['field']</code>
-      <code>$value</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="3">
-      <code>$format</code>
-      <code>$queryValues[]</code>
-      <code>$value</code>
-    </MixedAssignment>
-  </file>
-  <file src="src/Filter/ODM/IsNotNull.php">
-    <MixedArgument occurrences="1">
-      <code>$option['field']</code>
-    </MixedArgument>
-  </file>
-  <file src="src/Filter/ODM/IsNull.php">
-    <MixedArgument occurrences="1">
-      <code>$option['field']</code>
-    </MixedArgument>
-  </file>
-  <file src="src/Filter/ODM/LessThan.php">
-    <MixedArgument occurrences="4">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="2">
-      <code>$format</code>
-      <code>$value</code>
-    </MixedAssignment>
-  </file>
-  <file src="src/Filter/ODM/LessThanOrEquals.php">
-    <MixedArgument occurrences="4">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="2">
-      <code>$format</code>
-      <code>$value</code>
-    </MixedAssignment>
-  </file>
-  <file src="src/Filter/ODM/Like.php">
-    <MixedArgument occurrences="2">
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
-  </file>
-  <file src="src/Filter/ODM/NotEquals.php">
-    <MixedArgument occurrences="4">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="2">
-      <code>$format</code>
-      <code>$value</code>
-    </MixedAssignment>
-  </file>
-  <file src="src/Filter/ODM/NotIn.php">
-    <MixedArgument occurrences="4">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['field']</code>
-      <code>$value</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="3">
-      <code>$format</code>
-      <code>$queryValues[]</code>
-      <code>$value</code>
-    </MixedAssignment>
-  </file>
-  <file src="src/Filter/ODM/Regex.php">
-    <MixedArgument occurrences="2">
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
   </file>
   <file src="src/Filter/ODM/TypeCaster.php">
-    <InvalidScalarArgument occurrences="2">
+    <InvalidScalarArgument>
       <code>$value</code>
       <code>$value</code>
     </InvalidScalarArgument>
-    <MixedArrayAccess occurrences="1">
-      <code>$metadata-&gt;fieldMappings[$field]</code>
-    </MixedArrayAccess>
   </file>
   <file src="src/Filter/ORM/AbstractFilter.php">
-    <MoreSpecificImplementedParamType occurrences="1">
+    <MoreSpecificImplementedParamType>
       <code>$queryBuilder</code>
     </MoreSpecificImplementedParamType>
-  </file>
-  <file src="src/Filter/ORM/AndX.php">
-    <MixedArgument occurrences="2">
-      <code>$condition['type']</code>
-      <code>$dqlParts['where']-&gt;getParts()</code>
-    </MixedArgument>
-    <MixedArrayAccess occurrences="1">
-      <code>$condition['type']</code>
-    </MixedArrayAccess>
-    <MixedAssignment occurrences="2">
-      <code>$condition</code>
-      <code>$filter</code>
-    </MixedAssignment>
-    <MixedMethodCall occurrences="2">
-      <code>filter</code>
-      <code>getParts</code>
-    </MixedMethodCall>
-  </file>
-  <file src="src/Filter/ORM/Between.php">
-    <MixedArgument occurrences="8">
-      <code>$format</code>
-      <code>$format</code>
-      <code>$option['alias']</code>
-      <code>$option['field']</code>
-      <code>$option['field']</code>
-      <code>$option['field']</code>
-      <code>$option['from']</code>
-      <code>$option['to']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="3">
-      <code>$format</code>
-      <code>$from</code>
-      <code>$to</code>
-    </MixedAssignment>
-  </file>
-  <file src="src/Filter/ORM/Equals.php">
-    <MixedArgument occurrences="3">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="2">
-      <code>$format</code>
-      <code>$value</code>
-    </MixedAssignment>
-    <MixedOperand occurrences="2">
-      <code>$option['alias']</code>
-      <code>$option['field']</code>
-    </MixedOperand>
-  </file>
-  <file src="src/Filter/ORM/GreaterThan.php">
-    <MixedArgument occurrences="3">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="2">
-      <code>$format</code>
-      <code>$value</code>
-    </MixedAssignment>
-    <MixedOperand occurrences="2">
-      <code>$option['alias']</code>
-      <code>$option['field']</code>
-    </MixedOperand>
-  </file>
-  <file src="src/Filter/ORM/GreaterThanOrEquals.php">
-    <MixedArgument occurrences="3">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="2">
-      <code>$format</code>
-      <code>$value</code>
-    </MixedAssignment>
-    <MixedOperand occurrences="2">
-      <code>$option['alias']</code>
-      <code>$option['field']</code>
-    </MixedOperand>
-  </file>
-  <file src="src/Filter/ORM/In.php">
-    <MixedArgument occurrences="3">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$value</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="3">
-      <code>$format</code>
-      <code>$queryValues[]</code>
-      <code>$value</code>
-    </MixedAssignment>
-    <MixedOperand occurrences="2">
-      <code>$option['alias']</code>
-      <code>$option['field']</code>
-    </MixedOperand>
-  </file>
-  <file src="src/Filter/ORM/InnerJoin.php">
-    <MixedArgument occurrences="4">
-      <code>$option['alias']</code>
-      <code>$option['condition']</code>
-      <code>$option['conditionType']</code>
-      <code>$option['indexBy']</code>
-    </MixedArgument>
-    <MixedOperand occurrences="2">
-      <code>$option['field']</code>
-      <code>$option['parentAlias']</code>
-    </MixedOperand>
-  </file>
-  <file src="src/Filter/ORM/IsMemberOf.php">
-    <MixedArgument occurrences="3">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="2">
-      <code>$format</code>
-      <code>$value</code>
-    </MixedAssignment>
-    <MixedOperand occurrences="2">
-      <code>$option['alias']</code>
-      <code>$option['field']</code>
-    </MixedOperand>
-  </file>
-  <file src="src/Filter/ORM/IsNotNull.php">
-    <MixedOperand occurrences="2">
-      <code>$option['alias']</code>
-      <code>$option['field']</code>
-    </MixedOperand>
-  </file>
-  <file src="src/Filter/ORM/IsNull.php">
-    <MixedOperand occurrences="2">
-      <code>$option['alias']</code>
-      <code>$option['field']</code>
-    </MixedOperand>
-  </file>
-  <file src="src/Filter/ORM/LeftJoin.php">
-    <MixedArgument occurrences="4">
-      <code>$option['alias']</code>
-      <code>$option['condition']</code>
-      <code>$option['conditionType']</code>
-      <code>$option['indexBy']</code>
-    </MixedArgument>
-    <MixedOperand occurrences="2">
-      <code>$option['field']</code>
-      <code>$option['parentAlias']</code>
-    </MixedOperand>
-  </file>
-  <file src="src/Filter/ORM/LessThan.php">
-    <MixedArgument occurrences="3">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="2">
-      <code>$format</code>
-      <code>$value</code>
-    </MixedAssignment>
-    <MixedOperand occurrences="2">
-      <code>$option['alias']</code>
-      <code>$option['field']</code>
-    </MixedOperand>
-  </file>
-  <file src="src/Filter/ORM/LessThanOrEquals.php">
-    <MixedArgument occurrences="3">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="2">
-      <code>$format</code>
-      <code>$value</code>
-    </MixedAssignment>
-    <MixedOperand occurrences="2">
-      <code>$option['alias']</code>
-      <code>$option['field']</code>
-    </MixedOperand>
   </file>
   <file src="src/Filter/ORM/Like.php">
-    <MissingParamType occurrences="1">
+    <MissingParamType>
       <code>$metadata</code>
     </MissingParamType>
-    <MoreSpecificImplementedParamType occurrences="2">
+    <MoreSpecificImplementedParamType>
+      <code>$option</code>
       <code>$option</code>
       <code>$queryBuilder</code>
     </MoreSpecificImplementedParamType>
-  </file>
-  <file src="src/Filter/ORM/NotEquals.php">
-    <MixedArgument occurrences="3">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$option['value']</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="2">
-      <code>$format</code>
-      <code>$value</code>
-    </MixedAssignment>
-    <MixedOperand occurrences="2">
-      <code>$option['alias']</code>
-      <code>$option['field']</code>
-    </MixedOperand>
-  </file>
-  <file src="src/Filter/ORM/NotIn.php">
-    <MixedArgument occurrences="3">
-      <code>$format</code>
-      <code>$option['field']</code>
-      <code>$value</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="3">
-      <code>$format</code>
-      <code>$queryValues[]</code>
-      <code>$value</code>
-    </MixedAssignment>
-    <MixedOperand occurrences="2">
-      <code>$option['alias']</code>
-      <code>$option['field']</code>
-    </MixedOperand>
   </file>
   <file src="src/Filter/ORM/NotLike.php">
-    <MissingParamType occurrences="1">
+    <MissingParamType>
       <code>$metadata</code>
     </MissingParamType>
-    <MoreSpecificImplementedParamType occurrences="2">
+    <MoreSpecificImplementedParamType>
+      <code>$option</code>
       <code>$option</code>
       <code>$queryBuilder</code>
     </MoreSpecificImplementedParamType>
   </file>
-  <file src="src/Filter/ORM/OrX.php">
-    <MixedArgument occurrences="2">
-      <code>$condition['type']</code>
-      <code>$dqlParts['where']-&gt;getParts()</code>
-    </MixedArgument>
-    <MixedArrayAccess occurrences="1">
-      <code>$condition['type']</code>
-    </MixedArrayAccess>
-    <MixedAssignment occurrences="2">
-      <code>$condition</code>
-      <code>$filter</code>
-    </MixedAssignment>
-    <MixedMethodCall occurrences="2">
-      <code>filter</code>
-      <code>getParts</code>
-    </MixedMethodCall>
-  </file>
   <file src="src/Filter/ORM/TypeCaster.php">
-    <InvalidScalarArgument occurrences="6">
+    <InvalidScalarArgument>
       <code>$value</code>
       <code>$value</code>
       <code>$value</code>
@@ -408,603 +45,203 @@
       <code>$value</code>
       <code>$value</code>
     </InvalidScalarArgument>
-    <MixedArrayAccess occurrences="1">
-      <code>$metadata-&gt;fieldMappings[$field]</code>
-    </MixedArrayAccess>
-    <PossiblyFalseReference occurrences="1">
+    <PossiblyFalseReference>
       <code>format</code>
     </PossiblyFalseReference>
   </file>
   <file src="src/Filter/Service/ODMFilterManager.php">
-    <DeprecatedMethod occurrences="1">
+    <DeprecatedMethod>
       <code>getServiceLocator</code>
     </DeprecatedMethod>
-    <MixedArgument occurrences="1">
-      <code>$option['type']</code>
-    </MixedArgument>
-    <MixedArrayAccess occurrences="1">
-      <code>$option['type']</code>
-    </MixedArrayAccess>
-    <MixedAssignment occurrences="2">
-      <code>$filter</code>
-      <code>$option</code>
-    </MixedAssignment>
-    <MixedInferredReturnType occurrences="1">
-      <code>TypeCastInterface</code>
-    </MixedInferredReturnType>
-    <MixedMethodCall occurrences="1">
-      <code>filter</code>
-    </MixedMethodCall>
-    <MixedReturnStatement occurrences="1">
-      <code>$serviceLocator-&gt;get(TypeCaster::class)</code>
-    </MixedReturnStatement>
-    <NonInvariantDocblockPropertyType occurrences="1">
+    <MissingTemplateParam>
+      <code>ODMFilterManager</code>
+    </MissingTemplateParam>
+    <NonInvariantDocblockPropertyType>
       <code>$instanceOf</code>
     </NonInvariantDocblockPropertyType>
   </file>
   <file src="src/Filter/Service/ORMFilterManager.php">
-    <DeprecatedMethod occurrences="1">
+    <DeprecatedMethod>
       <code>getServiceLocator</code>
     </DeprecatedMethod>
-    <MixedArgument occurrences="1">
-      <code>$option['type']</code>
-    </MixedArgument>
-    <MixedArrayAccess occurrences="1">
-      <code>$option['type']</code>
-    </MixedArrayAccess>
-    <MixedAssignment occurrences="2">
-      <code>$filter</code>
-      <code>$option</code>
-    </MixedAssignment>
-    <MixedInferredReturnType occurrences="1">
-      <code>TypeCastInterface</code>
-    </MixedInferredReturnType>
-    <MixedMethodCall occurrences="1">
-      <code>filter</code>
-    </MixedMethodCall>
-    <MixedReturnStatement occurrences="1">
-      <code>$serviceLocator-&gt;get(TypeCaster::class)</code>
-    </MixedReturnStatement>
-    <NonInvariantDocblockPropertyType occurrences="1">
+    <MissingTemplateParam>
+      <code>ORMFilterManager</code>
+    </MissingTemplateParam>
+    <NonInvariantDocblockPropertyType>
       <code>$instanceOf</code>
     </NonInvariantDocblockPropertyType>
   </file>
   <file src="src/Hydrator/Strategy/CollectionLinkHydratorV2.php">
-    <MethodSignatureMismatch occurrences="1">
+    <MethodSignatureMismatch>
       <code>CollectionLinkHydratorV2</code>
     </MethodSignatureMismatch>
-    <MoreSpecificImplementedParamType occurrences="1">
+    <MoreSpecificImplementedParamType>
       <code>$value</code>
     </MoreSpecificImplementedParamType>
-    <UndefinedClass occurrences="1">
+    <UndefinedClass>
       <code>AbstractCollectionStrategy</code>
     </UndefinedClass>
   </file>
   <file src="src/Hydrator/Strategy/CollectionLinkHydratorV3.php">
-    <InternalClass occurrences="1">
+    <InternalClass>
       <code>AbstractCollectionStrategy</code>
     </InternalClass>
-    <InvalidReturnType occurrences="1">
+    <InvalidReturnType>
       <code>hydrate</code>
     </InvalidReturnType>
-    <MixedArgument occurrences="3">
-      <code>$config['route_name']</code>
-      <code>$filter($mapping['fieldName'])</code>
-      <code>$value</code>
-    </MixedArgument>
-    <MixedArrayAccess occurrences="6">
-      <code>$config['api-tools-doctrine-querybuilder-options']</code>
-      <code>$config['api-tools-hal']</code>
-      <code>$config['route_name']</code>
-      <code>$mapping['fieldName']</code>
-      <code>$mapping['inversedBy']</code>
-      <code>$mapping['mappedBy']</code>
-    </MixedArrayAccess>
-    <MixedArrayOffset occurrences="3">
-      <code>$config['api-tools-hal']['metadata_map'][$value-&gt;getTypeClass()-&gt;name]</code>
-      <code>$config['api-tools-hal']['metadata_map'][$value-&gt;getTypeClass()-&gt;name]</code>
-    </MixedArrayOffset>
-    <MixedAssignment occurrences="4">
-      <code>$config</code>
-      <code>$config</code>
-      <code>$filterKey</code>
-      <code>$mapping</code>
-    </MixedAssignment>
-    <MixedMethodCall occurrences="4">
-      <code>getId</code>
-      <code>getMapping</code>
-      <code>getOwner</code>
-      <code>getTypeClass</code>
-    </MixedMethodCall>
-    <MixedPropertyFetch occurrences="2">
-      <code>$value-&gt;getTypeClass()-&gt;name</code>
-      <code>$value-&gt;getTypeClass()-&gt;name</code>
-    </MixedPropertyFetch>
-    <PropertyNotSetInConstructor occurrences="1">
+    <PropertyNotSetInConstructor>
       <code>$serviceManager</code>
     </PropertyNotSetInConstructor>
   </file>
   <file src="src/Hydrator/Strategy/CollectionLinkHydratorV4.php">
-    <InvalidReturnType occurrences="1">
+    <InvalidReturnType>
       <code>hydrate</code>
     </InvalidReturnType>
-    <MissingConstructor occurrences="1">
+    <MissingConstructor>
       <code>$serviceManager</code>
     </MissingConstructor>
-    <MixedArgument occurrences="3">
-      <code>$config['route_name']</code>
-      <code>$filter($mapping['fieldName'])</code>
-      <code>$value</code>
-    </MixedArgument>
-    <MixedArrayAccess occurrences="6">
-      <code>$config['api-tools-doctrine-querybuilder-options']</code>
-      <code>$config['api-tools-hal']</code>
-      <code>$config['route_name']</code>
-      <code>$mapping['fieldName']</code>
-      <code>$mapping['inversedBy']</code>
-      <code>$mapping['mappedBy']</code>
-    </MixedArrayAccess>
-    <MixedArrayOffset occurrences="3">
-      <code>$config['api-tools-hal']['metadata_map'][$value-&gt;getTypeClass()-&gt;name]</code>
-      <code>$config['api-tools-hal']['metadata_map'][$value-&gt;getTypeClass()-&gt;name]</code>
-    </MixedArrayOffset>
-    <MixedAssignment occurrences="4">
-      <code>$config</code>
-      <code>$config</code>
-      <code>$filterKey</code>
-      <code>$mapping</code>
-    </MixedAssignment>
-    <MixedMethodCall occurrences="4">
-      <code>getId</code>
-      <code>getMapping</code>
-      <code>getOwner</code>
-      <code>getTypeClass</code>
-    </MixedMethodCall>
-    <MixedPropertyFetch occurrences="2">
-      <code>$value-&gt;getTypeClass()-&gt;name</code>
-      <code>$value-&gt;getTypeClass()-&gt;name</code>
-    </MixedPropertyFetch>
-  </file>
-  <file src="src/Module.php">
-    <MixedAssignment occurrences="1">
-      <code>$serviceManager</code>
-    </MixedAssignment>
-    <MixedInferredReturnType occurrences="1">
-      <code>array|ArrayAccess</code>
-    </MixedInferredReturnType>
-    <MixedMethodCall occurrences="1">
-      <code>get</code>
-    </MixedMethodCall>
-    <MixedReturnStatement occurrences="1">
-      <code>include __DIR__ . '/../config/module.config.php'</code>
-    </MixedReturnStatement>
   </file>
   <file src="src/OrderBy/ODM/AbstractOrderBy.php">
-    <MixedArgument occurrences="1">
-      <code>$params[0]</code>
-    </MixedArgument>
-    <MoreSpecificImplementedParamType occurrences="1">
+    <MoreSpecificImplementedParamType>
       <code>$queryBuilder</code>
     </MoreSpecificImplementedParamType>
-  </file>
-  <file src="src/OrderBy/ODM/Field.php">
-    <MixedArgument occurrences="3">
-      <code>$option['direction']</code>
-      <code>$option['direction']</code>
-      <code>$option['field']</code>
-    </MixedArgument>
   </file>
   <file src="src/OrderBy/ORM/AbstractOrderBy.php">
-    <MixedArgument occurrences="1">
-      <code>$params[0]</code>
-    </MixedArgument>
-    <MoreSpecificImplementedParamType occurrences="1">
+    <MoreSpecificImplementedParamType>
       <code>$queryBuilder</code>
     </MoreSpecificImplementedParamType>
   </file>
-  <file src="src/OrderBy/ORM/Field.php">
-    <MixedArgument occurrences="2">
-      <code>$option['direction']</code>
-      <code>$option['direction']</code>
-    </MixedArgument>
-    <MixedOperand occurrences="2">
-      <code>$option['alias']</code>
-      <code>$option['field']</code>
-    </MixedOperand>
-  </file>
   <file src="src/OrderBy/Service/ODMOrderByManager.php">
-    <MixedArgument occurrences="1">
-      <code>$option['type']</code>
-    </MixedArgument>
-    <MixedArrayAccess occurrences="1">
-      <code>$option['type']</code>
-    </MixedArrayAccess>
-    <MixedAssignment occurrences="2">
-      <code>$option</code>
-      <code>$orderByHandler</code>
-    </MixedAssignment>
-    <MixedMethodCall occurrences="1">
-      <code>orderBy</code>
-    </MixedMethodCall>
-    <NonInvariantDocblockPropertyType occurrences="1">
+    <MissingTemplateParam>
+      <code>ODMOrderByManager</code>
+    </MissingTemplateParam>
+    <NonInvariantDocblockPropertyType>
       <code>$instanceOf</code>
     </NonInvariantDocblockPropertyType>
   </file>
   <file src="src/OrderBy/Service/ORMOrderByManager.php">
-    <MixedArgument occurrences="1">
-      <code>$option['type']</code>
-    </MixedArgument>
-    <MixedArrayAccess occurrences="1">
-      <code>$option['type']</code>
-    </MixedArrayAccess>
-    <MixedAssignment occurrences="2">
-      <code>$option</code>
-      <code>$orderByHandler</code>
-    </MixedAssignment>
-    <MixedMethodCall occurrences="1">
-      <code>orderBy</code>
-    </MixedMethodCall>
-    <NonInvariantDocblockPropertyType occurrences="1">
+    <MissingTemplateParam>
+      <code>ORMOrderByManager</code>
+    </MissingTemplateParam>
+    <NonInvariantDocblockPropertyType>
       <code>$instanceOf</code>
     </NonInvariantDocblockPropertyType>
   </file>
   <file src="src/Query/Provider/DefaultOdm.php">
-    <ArgumentTypeCoercion occurrences="3">
+    <ArgumentTypeCoercion>
       <code>$entityClass</code>
       <code>$entityClass</code>
       <code>$metadata</code>
     </ArgumentTypeCoercion>
-    <ImplementedParamTypeMismatch occurrences="1">
+    <ImplementedParamTypeMismatch>
       <code>$queryBuilder</code>
     </ImplementedParamTypeMismatch>
-    <InvalidReturnStatement occurrences="1">
-      <code>$queryBuilder-&gt;getQuery()-&gt;execute()</code>
+    <InvalidReturnStatement>
+      <code><![CDATA[$queryBuilder->getQuery()->execute()]]></code>
     </InvalidReturnStatement>
-    <InvalidReturnType occurrences="1">
+    <InvalidReturnType>
       <code>int</code>
     </InvalidReturnType>
-    <MissingConstructor occurrences="1">
+    <MissingConstructor>
       <code>$serviceLocator</code>
     </MissingConstructor>
-    <MixedArgument occurrences="2">
-      <code>$request[$this-&gt;getFilterKey()]</code>
-      <code>$request[$this-&gt;getOrderByKey()]</code>
-    </MixedArgument>
-    <MixedArrayAccess occurrences="3">
-      <code>$config['api-tools-doctrine-querybuilder-options']</code>
-      <code>$request[$this-&gt;getFilterKey()]</code>
-      <code>$request[$this-&gt;getOrderByKey()]</code>
-    </MixedArrayAccess>
-    <MixedAssignment occurrences="2">
-      <code>$config</code>
-      <code>$request</code>
-    </MixedAssignment>
-    <MixedInferredReturnType occurrences="5">
-      <code>ODMFilterManager</code>
-      <code>ODMOrderByManager</code>
-      <code>array</code>
-      <code>string</code>
-      <code>string</code>
-    </MixedInferredReturnType>
-    <MixedMethodCall occurrences="1">
-      <code>toArray</code>
-    </MixedMethodCall>
-    <MixedReturnStatement occurrences="5">
-      <code>$config['api-tools-doctrine-querybuilder-options']</code>
-      <code>$config['filter_key']</code>
-      <code>$config['order_by_key']</code>
-      <code>$this-&gt;getServiceLocator()-&gt;get(ODMFilterManager::class)</code>
-      <code>$this-&gt;getServiceLocator()-&gt;get(ODMOrderByManager::class)</code>
-    </MixedReturnStatement>
-    <MoreSpecificImplementedParamType occurrences="1">
+    <MoreSpecificImplementedParamType>
       <code>$queryBuilder</code>
     </MoreSpecificImplementedParamType>
-    <NullableReturnStatement occurrences="1">
-      <code>$queryBuilder-&gt;getQuery()-&gt;execute()</code>
+    <NullableReturnStatement>
+      <code><![CDATA[$queryBuilder->getQuery()->execute()]]></code>
     </NullableReturnStatement>
-    <PossiblyNullReference occurrences="1">
+    <PossiblyNullReference>
       <code>getQuery</code>
     </PossiblyNullReference>
-    <UndefinedInterfaceMethod occurrences="3">
+    <UndefinedInterfaceMethod>
       <code>createQueryBuilder</code>
       <code>createQueryBuilder</code>
       <code>getQuery</code>
     </UndefinedInterfaceMethod>
   </file>
   <file src="src/Query/Provider/DefaultOdmFactory.php">
-    <ArgumentTypeCoercion occurrences="1">
+    <ArgumentTypeCoercion>
       <code>$container</code>
     </ArgumentTypeCoercion>
-    <DeprecatedMethod occurrences="1">
+    <DeprecatedMethod>
       <code>getServiceLocator</code>
     </DeprecatedMethod>
-    <RedundantConditionGivenDocblockType occurrences="1">
-      <code>$container-&gt;getServiceLocator()</code>
+    <RedundantConditionGivenDocblockType>
+      <code><![CDATA[$container->getServiceLocator()]]></code>
     </RedundantConditionGivenDocblockType>
   </file>
   <file src="src/Query/Provider/DefaultOrm.php">
-    <ArgumentTypeCoercion occurrences="2">
+    <ArgumentTypeCoercion>
       <code>$entityClass</code>
       <code>$entityClass</code>
     </ArgumentTypeCoercion>
-    <MissingConstructor occurrences="1">
+    <MissingConstructor>
       <code>$serviceLocator</code>
     </MissingConstructor>
-    <MixedArgument occurrences="4">
-      <code>$queryBuilder</code>
-      <code>$queryBuilder</code>
-      <code>$request[$this-&gt;getFilterKey()]</code>
-      <code>$request[$this-&gt;getOrderByKey()]</code>
-    </MixedArgument>
-    <MixedArrayAccess occurrences="3">
-      <code>$config['api-tools-doctrine-querybuilder-options']</code>
-      <code>$request[$this-&gt;getFilterKey()]</code>
-      <code>$request[$this-&gt;getOrderByKey()]</code>
-    </MixedArrayAccess>
-    <MixedAssignment occurrences="3">
-      <code>$config</code>
-      <code>$queryBuilder</code>
-      <code>$request</code>
-    </MixedAssignment>
-    <MixedInferredReturnType occurrences="5">
-      <code>ORMFilterManager</code>
-      <code>ORMOrderByManager</code>
-      <code>array</code>
-      <code>string</code>
-      <code>string</code>
-    </MixedInferredReturnType>
-    <MixedMethodCall occurrences="3">
-      <code>from</code>
-      <code>select</code>
-      <code>toArray</code>
-    </MixedMethodCall>
-    <MixedReturnStatement occurrences="5">
-      <code>$config['api-tools-doctrine-querybuilder-options']</code>
-      <code>$config['filter_key']</code>
-      <code>$config['order_by_key']</code>
-      <code>$this-&gt;getServiceLocator()-&gt;get(ORMFilterManager::class)</code>
-      <code>$this-&gt;getServiceLocator()-&gt;get(ORMOrderByManager::class)</code>
-    </MixedReturnStatement>
-    <PossiblyNullReference occurrences="1">
+    <PossiblyNullReference>
       <code>getQuery</code>
     </PossiblyNullReference>
-    <UndefinedInterfaceMethod occurrences="2">
+    <UndefinedInterfaceMethod>
       <code>createQueryBuilder</code>
       <code>getQuery</code>
     </UndefinedInterfaceMethod>
   </file>
   <file src="src/Query/Provider/DefaultOrmFactory.php">
-    <ArgumentTypeCoercion occurrences="1">
+    <ArgumentTypeCoercion>
       <code>$container</code>
     </ArgumentTypeCoercion>
-    <DeprecatedMethod occurrences="1">
+    <DeprecatedMethod>
       <code>getServiceLocator</code>
     </DeprecatedMethod>
-    <RedundantConditionGivenDocblockType occurrences="1">
-      <code>$container-&gt;getServiceLocator()</code>
+    <RedundantConditionGivenDocblockType>
+      <code><![CDATA[$container->getServiceLocator()]]></code>
     </RedundantConditionGivenDocblockType>
   </file>
   <file src="src/_autoload.php">
-    <MissingDependency occurrences="1">
+    <MissingDependency>
       <code>Hydrator\Strategy\CollectionLinkHydratorV2</code>
     </MissingDependency>
-    <MixedArgument occurrences="1">
-      <code>Hydrator\Strategy\CollectionLinkHydratorV2::class</code>
-    </MixedArgument>
   </file>
   <file src="test/Filter/ODMFilterTest.php">
-    <MixedArgument occurrences="1">
-      <code>$result</code>
-    </MixedArgument>
-    <MixedArrayAccess occurrences="5">
-      <code>$config['dbname']</code>
-      <code>$config['doctrine']</code>
-      <code>$config['port']</code>
-      <code>$config['server']</code>
-      <code>$metadata[0]</code>
-    </MixedArrayAccess>
-    <MixedAssignment occurrences="9">
-      <code>$collection</code>
-      <code>$config</code>
-      <code>$config</code>
-      <code>$db</code>
-      <code>$filterManager</code>
-      <code>$metadata</code>
-      <code>$objectManager</code>
-      <code>$objectManager</code>
-      <code>$result</code>
-    </MixedAssignment>
-    <MixedMethodCall occurrences="12">
-      <code>createQueryBuilder</code>
-      <code>drop</code>
-      <code>filter</code>
-      <code>flush</code>
-      <code>getAllMetadata</code>
-      <code>getMetadataFactory</code>
-      <code>persist</code>
-      <code>persist</code>
-      <code>persist</code>
-      <code>persist</code>
-      <code>persist</code>
-      <code>toArray</code>
-    </MixedMethodCall>
-    <MixedOperand occurrences="2">
-      <code>$config['port']</code>
-      <code>$config['server']</code>
-    </MixedOperand>
-    <MixedPropertyFetch occurrences="1">
-      <code>$db-&gt;meta</code>
-    </MixedPropertyFetch>
-    <PossiblyInvalidMethodCall occurrences="1">
+    <PossiblyInvalidMethodCall>
       <code>toArray</code>
     </PossiblyInvalidMethodCall>
-    <PossiblyNullReference occurrences="1">
+    <PossiblyNullReference>
       <code>toArray</code>
     </PossiblyNullReference>
-    <UndefinedInterfaceMethod occurrences="1">
+    <UndefinedInterfaceMethod>
       <code>getConfig</code>
     </UndefinedInterfaceMethod>
   </file>
-  <file src="test/Filter/ODMTypeCasterTest.php">
-    <MixedAssignment occurrences="3">
-      <code>$result</code>
-      <code>$result</code>
-      <code>$result</code>
-    </MixedAssignment>
-  </file>
   <file src="test/Filter/ORMFilterTest.php">
-    <MixedArgument occurrences="2">
-      <code>$objectManager</code>
-      <code>$result</code>
-    </MixedArgument>
-    <MixedArrayAccess occurrences="1">
-      <code>$metadata[0]</code>
-    </MixedArrayAccess>
-    <MixedAssignment occurrences="8">
-      <code>$albumOneId</code>
-      <code>$albumSixId</code>
-      <code>$filterManager</code>
-      <code>$metadata</code>
-      <code>$objectManager</code>
-      <code>$queryBuilder</code>
-      <code>$result</code>
-      <code>$this-&gt;objectManager</code>
-    </MixedAssignment>
-    <MixedMethodCall occurrences="10">
-      <code>filter</code>
-      <code>findOneBy</code>
-      <code>findOneBy</code>
-      <code>from</code>
-      <code>getAllMetadata</code>
-      <code>getId</code>
-      <code>getId</code>
-      <code>getQuery</code>
-      <code>getResult</code>
-      <code>select</code>
-    </MixedMethodCall>
-    <UndefinedDocblockClass occurrences="5">
+    <UndefinedDocblockClass>
       <code>$objectManager</code>
       <code>$objectManager</code>
-      <code>$this-&gt;objectManager</code>
-      <code>$this-&gt;objectManager</code>
+      <code><![CDATA[$this->objectManager]]></code>
+      <code><![CDATA[$this->objectManager]]></code>
       <code>ObjectManager</code>
     </UndefinedDocblockClass>
   </file>
-  <file src="test/Filter/ORMTypeCasterTest.php">
-    <MixedAssignment occurrences="8">
-      <code>$result</code>
-      <code>$result</code>
-      <code>$result</code>
-      <code>$result</code>
-      <code>$result</code>
-      <code>$result</code>
-      <code>$result</code>
-      <code>$result</code>
-    </MixedAssignment>
-  </file>
   <file src="test/Hydrator/Strategy/CollectionLinkTest.php">
-    <DeprecatedMethod occurrences="2">
+    <DeprecatedMethod>
       <code>setMethods</code>
       <code>setMethods</code>
     </DeprecatedMethod>
-    <MixedAssignment occurrences="1">
-      <code>$actual</code>
-    </MixedAssignment>
-    <MixedInferredReturnType occurrences="1">
-      <code>array</code>
-    </MixedInferredReturnType>
-    <MixedMethodCall occurrences="5">
-      <code>getRoute</code>
-      <code>getRouteOptions</code>
-      <code>getRouteParams</code>
-      <code>method</code>
-      <code>will</code>
-    </MixedMethodCall>
-    <PossiblyUndefinedMethod occurrences="1">
+    <PossiblyUndefinedMethod>
       <code>expects</code>
     </PossiblyUndefinedMethod>
-    <UndefinedInterfaceMethod occurrences="1">
+    <UndefinedInterfaceMethod>
       <code>getTypeClass</code>
     </UndefinedInterfaceMethod>
   </file>
   <file src="test/OrderBy/ODMOrderByTest.php">
-    <MixedArrayAccess occurrences="1">
-      <code>$config['doctrine']['connection']</code>
-    </MixedArrayAccess>
-    <MixedAssignment occurrences="7">
-      <code>$collection</code>
-      <code>$db</code>
-      <code>$meta</code>
-      <code>$meta</code>
-      <code>$objectManager</code>
-      <code>$result</code>
-      <code>$result</code>
-    </MixedAssignment>
-    <MixedMethodCall occurrences="9">
-      <code>drop</code>
-      <code>flush</code>
-      <code>getName</code>
-      <code>getName</code>
-      <code>persist</code>
-      <code>persist</code>
-      <code>persist</code>
-      <code>persist</code>
-      <code>persist</code>
-    </MixedMethodCall>
-    <MixedOperand occurrences="2">
-      <code>$config['port']</code>
-      <code>$config['server']</code>
-    </MixedOperand>
-    <MixedPropertyFetch occurrences="1">
-      <code>$db-&gt;meta</code>
-    </MixedPropertyFetch>
-    <UndefinedInterfaceMethod occurrences="1">
+    <UndefinedInterfaceMethod>
       <code>getConfig</code>
     </UndefinedInterfaceMethod>
   </file>
-  <file src="test/OrderBy/ORMOrderByTest.php">
-    <MixedArgument occurrences="3">
-      <code>$objectManager</code>
-      <code>$result</code>
-      <code>$result</code>
-    </MixedArgument>
-    <MixedArrayAccess occurrences="1">
-      <code>$metadata[0]</code>
-    </MixedArrayAccess>
-    <MixedAssignment occurrences="9">
-      <code>$artist</code>
-      <code>$artist</code>
-      <code>$metadata</code>
-      <code>$objectManager</code>
-      <code>$objectManager</code>
-      <code>$orderByManager</code>
-      <code>$queryBuilder</code>
-      <code>$result</code>
-      <code>$result</code>
-    </MixedAssignment>
-    <MixedMethodCall occurrences="10">
-      <code>createQueryBuilder</code>
-      <code>from</code>
-      <code>getAllMetadata</code>
-      <code>getMetadataFactory</code>
-      <code>getName</code>
-      <code>getName</code>
-      <code>getQuery</code>
-      <code>getResult</code>
-      <code>orderBy</code>
-      <code>select</code>
-    </MixedMethodCall>
-  </file>
   <file src="test/Query/Provider/DefaultOdmTest.php">
-    <MixedArgument occurrences="6">
-      <code>$resourceEvent-&gt;reveal()</code>
-      <code>$resourceEvent-&gt;reveal()</code>
-      <code>$resourceEvent-&gt;reveal()</code>
-      <code>$resourceEvent-&gt;reveal()</code>
-      <code>$resourceEvent-&gt;reveal()</code>
-      <code>$resourceEvent-&gt;reveal()</code>
-    </MixedArgument>
-    <PossiblyUndefinedMethod occurrences="6">
+    <PossiblyUndefinedMethod>
       <code>reveal</code>
       <code>reveal</code>
       <code>reveal</code>
@@ -1014,15 +251,7 @@
     </PossiblyUndefinedMethod>
   </file>
   <file src="test/Query/Provider/DefaultOrmTest.php">
-    <MixedArgument occurrences="6">
-      <code>$resourceEvent-&gt;reveal()</code>
-      <code>$resourceEvent-&gt;reveal()</code>
-      <code>$resourceEvent-&gt;reveal()</code>
-      <code>$resourceEvent-&gt;reveal()</code>
-      <code>$resourceEvent-&gt;reveal()</code>
-      <code>$resourceEvent-&gt;reveal()</code>
-    </MixedArgument>
-    <PossiblyUndefinedMethod occurrences="6">
+    <PossiblyUndefinedMethod>
       <code>reveal</code>
       <code>reveal</code>
       <code>reveal</code>
@@ -1032,30 +261,27 @@
     </PossiblyUndefinedMethod>
   </file>
   <file src="test/TestCase.php">
-    <ImplementedReturnTypeMismatch occurrences="1">
+    <ImplementedReturnTypeMismatch>
       <code>void</code>
     </ImplementedReturnTypeMismatch>
-    <MixedArgument occurrences="1">
-      <code>$config['modules']</code>
-    </MixedArgument>
-    <ParamNameMismatch occurrences="1">
+    <ParamNameMismatch>
       <code>$config</code>
     </ParamNameMismatch>
-    <PossiblyInvalidArgument occurrences="1">
+    <PossiblyInvalidArgument>
       <code>$config</code>
     </PossiblyInvalidArgument>
-    <PossiblyNullReference occurrences="1">
+    <PossiblyNullReference>
       <code>getNumberOfRequiredParameters</code>
     </PossiblyNullReference>
   </file>
   <file src="test/assets/module/Db/src/Db/Entity/Album.php">
-    <MissingPropertyType occurrences="4">
+    <MissingPropertyType>
       <code>$artist</code>
       <code>$createdAt</code>
       <code>$id</code>
       <code>$name</code>
     </MissingPropertyType>
-    <MissingReturnType occurrences="4">
+    <MissingReturnType>
       <code>getArtist</code>
       <code>getCreatedAt</code>
       <code>getId</code>
@@ -1063,68 +289,38 @@
     </MissingReturnType>
   </file>
   <file src="test/assets/module/Db/src/Db/Entity/Artist.php">
-    <MissingReturnType occurrences="4">
+    <MissingReturnType>
       <code>getAlbum</code>
       <code>getCreatedAt</code>
       <code>getId</code>
       <code>getName</code>
     </MissingReturnType>
-    <PropertyNotSetInConstructor occurrences="3">
+    <PropertyNotSetInConstructor>
       <code>$createdAt</code>
       <code>$id</code>
       <code>$name</code>
     </PropertyNotSetInConstructor>
   </file>
-  <file src="test/assets/module/Db/src/Db/Module.php">
-    <MixedInferredReturnType occurrences="1">
-      <code>array</code>
-    </MixedInferredReturnType>
-    <MixedReturnStatement occurrences="1">
-      <code>include __DIR__ . '/../../config/module.config.php'</code>
-    </MixedReturnStatement>
-  </file>
   <file src="test/assets/module/DbMongo/src/DbMongo/Document/Meta.php">
-    <LessSpecificReturnStatement occurrences="1"/>
-    <MissingConstructor occurrences="3">
+    <MissingConstructor>
       <code>$createdAt</code>
       <code>$id</code>
       <code>$name</code>
     </MissingConstructor>
-    <MissingParamType occurrences="1">
+    <MissingParamType>
       <code>$values</code>
     </MissingParamType>
-    <MissingPropertyType occurrences="1">
+    <MissingPropertyType>
       <code>$description</code>
     </MissingPropertyType>
-    <MissingReturnType occurrences="4">
+    <MissingReturnType>
       <code>getCreatedAt</code>
       <code>getDescription</code>
       <code>getId</code>
       <code>getName</code>
     </MissingReturnType>
-    <MixedArgument occurrences="1">
-      <code>$values['createdAt'] ?? null</code>
-    </MixedArgument>
-    <MixedArrayAccess occurrences="2">
-      <code>$values['createdAt']</code>
-      <code>$values['name']</code>
-    </MixedArrayAccess>
-    <MixedAssignment occurrences="1">
-      <code>$name</code>
-    </MixedAssignment>
-    <MoreSpecificReturnType occurrences="1">
-      <code>array{name: string, createdAt: DateTime, description: string}</code>
-    </MoreSpecificReturnType>
-    <PossiblyNullArgument occurrences="1">
+    <PossiblyNullArgument>
       <code>$values['createdAt'] ?? null</code>
     </PossiblyNullArgument>
-  </file>
-  <file src="test/assets/module/DbMongo/src/DbMongo/Module.php">
-    <MixedInferredReturnType occurrences="1">
-      <code>array</code>
-    </MixedInferredReturnType>
-    <MixedReturnStatement occurrences="1">
-      <code>include __DIR__ . '/../../config/module.config.php'</code>
-    </MixedReturnStatement>
   </file>
 </files>

@@ -8,8 +8,8 @@
 
 namespace Laminas\ApiTools\Doctrine\QueryBuilder\Query\Provider;
 
-use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\AbstractPluginManager;
+use Psr\Container\ContainerInterface;
 
 class DefaultOdmFactory
 {
