@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="5.13.1@086b94371304750d1c673315321a55d15fc59015">
+<files psalm-version="5.15.0@5c774aca4746caf3d239d9c8cadb9f882ca29352">
   <file src="src/Filter/ODM/AbstractFilter.php">
     <MoreSpecificImplementedParamType>
       <code>$queryBuilder</code>
     </MoreSpecificImplementedParamType>
+  </file>
+  <file src="src/Filter/ODM/Like.php">
+    <PossiblyInvalidArgument>
+      <code>$regex</code>
+    </PossiblyInvalidArgument>
   </file>
   <file src="src/Filter/ODM/TypeCaster.php">
     <InvalidScalarArgument>
