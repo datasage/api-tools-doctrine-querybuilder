@@ -28,7 +28,7 @@ jobs:
       matrix: ${{ fromJSON(needs.matrix.outputs.matrix) }}
     steps:
       - name: ${{ matrix.name }}
-        uses: laminas/laminas-continuous-integration-action@v1.32.0
+        uses: laminas/laminas-continuous-integration-action@v1.32
         with:
           job: ${{ matrix.job }}
     services:
