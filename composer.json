@@ -92,8 +92,8 @@
     },
     "repositories": [
         {
-            "type": "git",
-            "url": "git@github.com:datasage/api-tools-doctrine.git"
+            "type": "vcs",
+            "url": "https://github.com/datasage/api-tools-doctrine"
         }
     ]
 }

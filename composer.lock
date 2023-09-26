@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90e7439d35031df5d0cf9cd448b42fdd",
+    "content-hash": "c540358a44e1ce1ba52ec89bac2b1960",
     "packages": [
         {
             "name": "brick/varexporter",
@@ -1293,8 +1293,14 @@
             "version": "dev-datasage/php8compatability",
             "source": {
                 "type": "git",
-                "url": "git@github.com:datasage/api-tools-doctrine.git",
+                "url": "https://github.com/datasage/api-tools-doctrine.git",
                 "reference": "591867c1a47b8077e02d1c272868ed3923e7ae28"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/datasage/api-tools-doctrine/zipball/591867c1a47b8077e02d1c272868ed3923e7ae28",
+                "reference": "591867c1a47b8077e02d1c272868ed3923e7ae28",
+                "shasum": ""
             },
             "require": {
                 "doctrine/doctrine-laminas-hydrator": "3.2.1 || ^3.3.0",
