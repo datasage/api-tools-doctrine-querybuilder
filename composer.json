@@ -45,7 +45,7 @@
     "require-dev": {
         "dg/bypass-finals": "^1.4",
         "doctrine/dbal": "^2.12.1 || ^3.0.0",
-        "doctrine/doctrine-mongo-odm-module": "^2.0.2 || ^3.0.2 || ^4.0",
+        "doctrine/doctrine-mongo-odm-module": "^3.0.2 || ^4.0",
         "doctrine/doctrine-orm-module": "^3 || ^4 || ^5",
         "doctrine/orm": "^2.7.5",
         "laminas-api-tools/api-tools-provider": "^1.2",
