@@ -6,7 +6,7 @@ use DbMongo\Document\Meta;
 use Doctrine\ODM\MongoDB\Repository\DocumentRepository;
 
 /**
-* @extends DocumentRepository<Meta>
+ * @extends DocumentRepository<Meta>
  */
 class MetaRepository extends DocumentRepository
 {
