@@ -1,14 +1,10 @@
 <?php
 
-/**
- * @see       https://github.com/laminas-api-tools/api-tools-doctrine-querybuilder for the canonical source repository
- * @copyright https://github.com/laminas-api-tools/api-tools-doctrine-querybuilder/blob/master/COPYRIGHT.md
- * @license   https://github.com/laminas-api-tools/api-tools-doctrine-querybuilder/blob/master/LICENSE.md New BSD License
- */
+declare(strict_types=1);
 
 namespace Laminas\ApiTools\Doctrine\QueryBuilder\Hydrator\Strategy;
 
-use DoctrineModule\Stdlib\Hydrator\Strategy\AbstractCollectionStrategy;
+use Doctrine\Laminas\Hydrator\Strategy\AbstractCollectionStrategy;
 use Laminas\ApiTools\Hal\Link\Link;
 use Laminas\Filter\FilterChain;
 use Laminas\Hydrator\Strategy\StrategyInterface;
@@ -46,7 +42,7 @@ class CollectionLinkHydratorV3 extends AbstractCollectionStrategy implements Str
     }
 
     /**
-     * @param object $value
+     * @inheritDoc
      */
     public function extract($value, ?object $object = null)
     {
@@ -93,7 +89,7 @@ class CollectionLinkHydratorV3 extends AbstractCollectionStrategy implements Str
     }
 
     /**
-     * @param mixed $value
+     * @inheritDoc
      */
     public function hydrate($value, ?array $data = null)
     {

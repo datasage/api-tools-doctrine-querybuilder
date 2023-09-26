@@ -1,9 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DbMongo\Repository;
 
-use Doctrine\ODM\MongoDB\DocumentRepository;
+use DbMongo\Document\Meta;
+use Doctrine\ODM\MongoDB\Repository\DocumentRepository;
 
+/**
+ * @extends DocumentRepository<Meta>
+ */
 class MetaRepository extends DocumentRepository
 {
 }

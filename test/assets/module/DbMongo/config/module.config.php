@@ -1,15 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DbMongo;
 
-use Doctrine\ODM\MongoDB\Mapping\Driver\YamlDriver;
+use Doctrine\ODM\MongoDB\Mapping\Driver\XmlDriver;
 
 return [
     'doctrine' => [
         'driver' => [
             'odm_driver'  => [
-                'class' => YamlDriver::class,
-                'paths' => [__DIR__ . '/yml'],
+                'class' => XmlDriver::class,
+                'paths' => [__DIR__ . '/xml'],
             ],
             'odm_default' => [
                 'drivers' => [

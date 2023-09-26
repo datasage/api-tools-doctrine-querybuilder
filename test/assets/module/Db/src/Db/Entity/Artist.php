@@ -8,12 +8,16 @@ use Exception;
 
 class Artist
 {
+    /** @var int */
     protected $id;
 
+    /** @var string */
     protected $name;
 
+    /** @var DateTime */
     protected $createdAt;
 
+    /** @var ArrayCollection<int, Album> */
     protected $album;
 
     public function __construct()
@@ -64,7 +68,7 @@ class Artist
     /**
      * Add album
      *
-     * @param Album $album
+     * @param Album|ArrayCollection<array-key, Album> $album
      * @return Artist
      * @throws Exception
      */
@@ -72,7 +76,7 @@ class Artist
     {
         if ($album instanceof Album) {
             $this->album[] = $album;
-        } elseif ($album instanceof ArrayCollection) {
+        } else {
             foreach ($album as $a) {
                 if (! $a instanceof Album) {
                     throw new Exception('Invalid type in addAlbum');
@@ -87,7 +91,7 @@ class Artist
     /**
      * Remove album
      *
-     * @param Album $album
+     * @param Album|ArrayCollection<array-key, Album> $album
      *
      * @throws Exception
      *
@@ -95,15 +99,12 @@ class Artist
      */
     public function removeAlbum($album): void
     {
-        if ($album instanceof Album) {
-            $this->album[] = $album;
-        } elseif ($album instanceof ArrayCollection) {
-            foreach ($album as $a) {
-                if (! $a instanceof Album) {
-                    throw new Exception('Invalid type remove addAlbum');
-                }
+        if(is_iterable($album)) {
+            foreach($album as $a) {
                 $this->album->removeElement($a);
             }
+        } elseif ($album instanceof Album) {
+            $this->album->removeElement($album);
         }
     }
 }

@@ -1,10 +1,6 @@
 <?php
 
-/**
- * @see       https://github.com/laminas-api-tools/api-tools-doctrine-querybuilder for the canonical source repository
- * @copyright https://github.com/laminas-api-tools/api-tools-doctrine-querybuilder/blob/master/COPYRIGHT.md
- * @license   https://github.com/laminas-api-tools/api-tools-doctrine-querybuilder/blob/master/LICENSE.md New BSD License
- */
+declare(strict_types=1);
 
 namespace Laminas\ApiTools\Doctrine\QueryBuilder\Filter\ORM;
 
@@ -30,6 +26,9 @@ abstract class AbstractFilter implements FilterInterface
     /** @var TypeCastInterface */
     protected $typeCaster;
 
+    /**
+     * @param array{type_caster?:TypeCaster|null} $params
+     */
     public function __construct(array $params = [])
     {
         $this->setFilterManager($this->extractFilterManagerFromConstructorParams($params));

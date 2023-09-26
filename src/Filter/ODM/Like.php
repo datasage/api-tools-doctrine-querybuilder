@@ -1,14 +1,10 @@
 <?php
 
-/**
- * @see       https://github.com/laminas-api-tools/api-tools-doctrine-querybuilder for the canonical source repository
- * @copyright https://github.com/laminas-api-tools/api-tools-doctrine-querybuilder/blob/master/COPYRIGHT.md
- * @license   https://github.com/laminas-api-tools/api-tools-doctrine-querybuilder/blob/master/LICENSE.md New BSD License
- */
+declare(strict_types=1);
 
 namespace Laminas\ApiTools\Doctrine\QueryBuilder\Filter\ODM;
 
-use MongoRegex;
+use MongoDB\BSON\Regex;
 
 use function str_replace;
 
@@ -28,13 +24,13 @@ class Like extends AbstractFilter
             }
         }
 
-        $regex = '/' . str_replace('%', '.*?', $option['value']) . '/i';
+        $regex = str_replace('%', '.*?', $option['value']);
 
         $queryBuilder->$queryType(
             $queryBuilder
               ->expr()
               ->field($option['field'])
-              ->equals(new MongoRegex($regex))
+              ->equals(new Regex($regex, 'i'))
         );
     }
 }

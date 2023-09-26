@@ -1,10 +1,6 @@
 <?php
 
-/**
- * @see       https://github.com/laminas-api-tools/api-tools-doctrine-querybuilder for the canonical source repository
- * @copyright https://github.com/laminas-api-tools/api-tools-doctrine-querybuilder/blob/master/COPYRIGHT.md
- * @license   https://github.com/laminas-api-tools/api-tools-doctrine-querybuilder/blob/master/LICENSE.md New BSD License
- */
+declare(strict_types=1);
 
 namespace LaminasTest\ApiTools\Doctrine\QueryBuilder\Query\Provider;
 
@@ -24,22 +20,23 @@ use Laminas\Stdlib\Parameters;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 use Prophecy\PhpUnit\ProphecyTrait;
+use Prophecy\Prophecy\ObjectProphecy;
 use Prophecy\Prophecy\ProphecyInterface;
 
 class DefaultOrmTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @var DefaultOrm|ProphecyInterface */
+    /** @var DefaultOrm */
     protected $provider;
 
-    /** @var QueryBuilder|ProphecyInterface */
+    /** @var ObjectProphecy<QueryBuilder> */
     protected $queryBuilder;
 
-    /** @var ObjectManager|ProphecyInterface */
+    /** @var ObjectProphecy<ObjectManager> */
     protected $objectManager;
 
-    /** @var ServiceLocatorInterface|ProphecyInterface */
+    /** @var ObjectProphecy<ServiceLocatorInterface> */
     protected $serviceLocator;
 
     public function setUp(): void

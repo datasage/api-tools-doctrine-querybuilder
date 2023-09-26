@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Db;
 
 use Laminas\ApiTools\Provider\ApiToolsProviderInterface;
