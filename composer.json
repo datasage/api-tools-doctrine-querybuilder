@@ -54,7 +54,7 @@
         "phpspec/prophecy-phpunit": "^2.0",
         "phpunit/phpunit": "^9.5.0",
         "psalm/plugin-phpunit": "^0.15",
-        "symfony/yaml": "^2.3 || ^3.0 || ^4.0",
+        "symfony/yaml": "^5.4.52",
         "vimeo/psalm": "^4.7"
     },
     "suggest": {
